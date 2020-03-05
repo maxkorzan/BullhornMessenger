@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Caveat|Cinzel|Cinzel+Decorative|Fredericka+the+Great|Julius+Sans+One|Kaushan+Script|Lato|Merienda|Patua+One|Spectral+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alice&display=swap" rel="stylesheet">
+
     <style>
         /** { border: 1px solid red !important; }*/
     </style>
@@ -21,20 +24,25 @@
 
 <div class="container">
 
-    <h1 class="display-2" style="text-align: center">My Account Info</h1>
+    <h1 class="display-3" style="text-align: center; font-family: 'Cinzel Decorative', cursive;">My Account Info</h1>
 
     <div class="row">
-        <div class="col-4" ></div>
-        <div class="col-4">
+        <div class="col-md-4">
             <br><br><br>
+            <img class="img-fluid rounded mb-3 mb-md-0" src="https://res.cloudinary.com/dwsdggfi5/image/upload/v1583438126/Images/Avatar/aang_logo_hw3xj5.png" alt="">
+        </div>
+        <div class="col-md-8">
+            <br><br><br>
+
+            <p th:inline="text"><strong>Username: </strong>[[${user.username}]]</p>
+            <hr>
             <p th:inline="text"><strong>First name: </strong>[[${user.firstName}]]</p>
             <p th:inline="text"><strong>Last name: </strong>[[${user.lastName}]]</p>
             <p th:inline="text"><strong>Email: </strong>[[${user.email}]]</p>
-            <p th:inline="text"><strong>Username: </strong>[[${user.username}]]</p>
-            <p th:inline="text"><strong>Password: </strong>[[${user.password}]]</p>
+<!--            <p th:inline="text"><strong>Password: </strong>[[${user.password}]]</p>-->
 
         </div>
-        <div class="col-4" ></div>
+<!--        <div class="col-4" ></div>-->
     </div>
 </div>
 

@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Caveat|Cinzel|Cinzel+Decorative|Fredericka+the+Great|Julius+Sans+One|Kaushan+Script|Lato|Merienda|Patua+One|Spectral+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alice&display=swap" rel="stylesheet">
+
     <style>
         /** { border: 1px solid red !important; }*/
     </style>
@@ -18,41 +21,41 @@
 <br>
 
 <div class="container">
-    <h1 class="display-1">Bullhorn Messenger</h1>
-</div>
 
-<div class="container">
+    <h1 class="display-3" style="text-align: center; font-family: 'Kaushan Script', cursive;">"Appa <small>Yip! Yip!</small>"</h1>
 
     <div class="row">
 <!--    <div class="col-1" ></div>-->
     <div class="col" >
+        <br><br>
 
-        <table class="table table-hover table-borderless">
+        <table class="table table-hover table-borderless table-striped bg-faded">
             <thead>
-            <tr>
-                <th>Title</th>
-                <th>Posted By</th>
-                <th>Content</th>
+            <tr style="font-family: 'Spectral SC', serif;">
+                <td></td>
+                <td>Title</td>
+                <td>Posted By</td>
+                <td>Content</td>
             </tr>
             </thead>
 
             <tbody>
             <tr th:each="message : ${messages}">
-                <td th:text="${message.title}"></td>
-                <td th:inline="text">[[${message.user.firstName}]] [[${message.user.lastName}]] on [[${message.date}]]</td>
+                <td><img th:src="${message.image}" class="img-thumbnail"></td>
+                <td class="text-nowrap" th:inline="text"><strong>[[${message.title}]]</strong></td>
+                <td class="text-nowrap" th:inline="text">[[${message.user.firstName}]] [[${message.user.lastName}]] <br>
+                    <span style="font-style: italic" class="text-muted">on [[${message.date}]]</span></td>
+
                 <td th:text="${message.content}"></td>
                 <td>
                     <div th:if="${message.user.getId()} == ${message_user_id}">
-                        <a th:href="@{/detail/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-primary" >Details</button></a>
-                        <a th:href="@{/update/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-warning" >Update</button></a>
-                        <a th:href="@{/delete/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-danger" >Delete</button></a>
+                        <a th:href="@{/detail/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-outline-primary" style="margin-bottom: 10px" >Details</button></a>
+                        <a th:href="@{/update/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-outline-warning" style="margin-bottom: 10px" >Update</button></a>
+                        <a th:href="@{/delete/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-outline-danger" >Delete</button></a>
                     </div>
                     <div th:if="${message.user.getId()} != ${message_user_id}">
-                        <a th:href="@{/detail/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-primary" >Details</button></a>
+                        <a th:href="@{/detail/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-outline-primary" >Details</button></a>
                     </div>
-                    <!--            <a th:href="@{/update/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-outline-primary">Update</button></a>-->
-                    <!--            <a th:href="@{/detail/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-outline-info">Details</button></a>-->
-                    <!--            <a th:href="@{/delete/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-outline-danger">Delete</button></a>-->
                 </td>
             </tr>
             </tbody>

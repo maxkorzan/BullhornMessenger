@@ -1,3 +1,23 @@
+body {
+    /*font-family: Garamond;*/
+    /*font-family: 'Alice', serif;*/
+    font-family: 'Lato', sans-serif;
+
+}
+
+.bg-faded{
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.bg-clear{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.btn {
+    font-family: 'Spectral SC', serif;
+}
+
+
 
 .bg-index{
     background: url("https://res.cloudinary.com/dwsdggfi5/image/upload/v1583432074/Images/Avatar/45336_avatar_the_last_airbender_brpo4z.jpg") no-repeat center center fixed;

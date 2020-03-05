@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
     <link rel="stylesheet" type="text/css" href="/css/util.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+SC|Caveat|Cinzel|Cinzel+Decorative|Fredericka+the+Great|Julius+Sans+One|Kaushan+Script|Lato|Merienda|Patua+One|Spectral+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alice&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -25,10 +28,10 @@
                 </div>
 
                 <span class="login100-form-title p-t-20 p-b-45">
-                        <div th:if="${param.error}">
+                        <div th:if="${param.error}" style="font-family: 'Spectral SC', serif;">
                             Invalid username or password
                         </div>
-                        <div th:if="${param.logout}">
+                        <div th:if="${param.logout}" style="font-family: 'Spectral SC', serif;">
                             You have been logged out
                         </div>
                 </span>
@@ -56,13 +59,13 @@
                 </div>
 
                 <div class="text-center w-full p-t-25 p-b-230">
-                    <a href="#" class="txt1">
+                    <a href="#" class="txt1" style="font-family: 'Spectral SC', serif;">
                         Forgot Username / Password?
                     </a>
                 </div>
 
                 <div class="text-center w-full">
-                    <a class="txt1" href="/register">
+                    <a class="txt1" href="/register" style="font-family: 'Spectral SC', serif;">
                         Create new account
                         <i class="fa fa-long-arrow-right"></i>
                     </a>
