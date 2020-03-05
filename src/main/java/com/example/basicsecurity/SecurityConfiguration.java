@@ -39,12 +39,12 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
 
                 //4.03 USING ROLES FOR PAGE PERMISSIONS
-                .antMatchers("/", "/h2-console/**", "/register").permitAll() //.access("hasAnyAuthority('USER','ADMIN')")   //4.04 ADDING H2 DATABASE
-                .antMatchers("/admin").access("hasAuthority('ADMIN')")
+                .antMatchers("/", "/h2-console/**", "/register", "/style.css", "/detail/**",
+                        "/css/**", "/js/**", "/vendor/**", "/images/**", "/fonts/**").permitAll() //.access("hasAnyAuthority('USER','ADMIN')")   //4.04 ADDING H2 DATABASE
 
+                .antMatchers("/admin").access("hasAuthority('ADMIN')")
                 .anyRequest().authenticated()
                 .and().formLogin()/*remove this for default login template >> */.loginPage("/login")/* << */.permitAll() //4.02 ADD CUSTOM LOGIN PAGE USING: .loginPage("/login").permitAll();
-
                 //4.03 (CONTINUED)
                 .and().logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
