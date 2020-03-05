@@ -5,28 +5,38 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
     <style>
         /** { border: 1px solid red !important; }*/
     </style>
 
 </head>
-<body>
+<body class="bg-secure">
 
 <div th:replace="base :: navbar"></div>
 <br>
 <br>
 
-<div th:inline="text">Current User: [[${user.firstName}]] [[${user.lastName}]]</div>
+<!--<div th:inline="text">Current User: [[${user.firstName}]] [[${user.lastName}]]</div>-->
 
-<h3>Secure Page</h3>
-<a href="/logout">logout</a>
+<div class="container">
 
-<p th:inline="text"><strong>First name: </strong>[[${user.firstName}]]</p>
-<p th:inline="text"><strong>Last name: </strong>[[${user.lastName}]]</p>
-<p th:inline="text"><strong>Email: </strong>[[${user.email}]]</p>
-<p th:inline="text"><strong>Username: </strong>[[${user.username}]]</p>
-<p th:inline="text"><strong>Password: </strong>[[${user.password}]]</p>
+    <h1 class="display-2" style="text-align: center">My Account Info</h1>
+
+    <div class="row">
+        <div class="col-4" ></div>
+        <div class="col-4">
+            <br><br><br>
+            <p th:inline="text"><strong>First name: </strong>[[${user.firstName}]]</p>
+            <p th:inline="text"><strong>Last name: </strong>[[${user.lastName}]]</p>
+            <p th:inline="text"><strong>Email: </strong>[[${user.email}]]</p>
+            <p th:inline="text"><strong>Username: </strong>[[${user.username}]]</p>
+            <p th:inline="text"><strong>Password: </strong>[[${user.password}]]</p>
+
+        </div>
+        <div class="col-4" ></div>
+    </div>
+</div>
 
 
 

@@ -48,7 +48,8 @@ public class HomeController {
             userService.saveUser(user);
             model.addAttribute("message", "User Account Created");
         }
-        return "index";
+        return "login";
+//        return "redirect:/";
     }
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -69,10 +70,10 @@ public class HomeController {
         String username = null;
         try {
             username = principal.getName();
-            model.addAttribute("car_user_id", userRepository.findByUsername(principal.getName()).getId());
+            model.addAttribute("message_user_id", userRepository.findByUsername(principal.getName()).getId());
             return "index";
         } catch (Exception e){
-            model.addAttribute("car_user_id", 0);
+            model.addAttribute("message_user_id", 0);
             return "index";
         }
     }
@@ -138,10 +139,10 @@ public class HomeController {
 
     //////////////////////////////////////////////////////////////////////////////////////////////////////////
     @RequestMapping("/detail/{id}")
-    public String showCar(@PathVariable("id") long id, Model model, Principal principal, Authentication authentication) {
+    public String showMessage(@PathVariable("id") long id, Model model, Principal principal, Authentication authentication) {
         model.addAttribute("message", messageRepository.findById(id).get());
         model.addAttribute("users", userRepository.findAll());
-//        model.addAttribute("car_user_id", userRepository.findByUsername(principal.getName()).getId());
+        model.addAttribute("message_user_id", userRepository.findByUsername(principal.getName()).getId());
 
         String username = null;
         try {
@@ -153,11 +154,10 @@ public class HomeController {
             return "show";
         }
 
-//        return "show";
     }
 
     @RequestMapping("/update/{id}")
-    public String updateCar(@PathVariable("id") long id, Model model, Principal principal) {
+    public String updateMessage(@PathVariable("id") long id, Model model, Principal principal) {
         model.addAttribute("message", messageRepository.findById(id).get());
         model.addAttribute("user_id", userRepository.findByUsername(principal.getName()).getId());
 
@@ -171,7 +171,7 @@ public class HomeController {
     }
 
     @RequestMapping("/delete/{id}")
-    public String delCar(@PathVariable("id") long id, Model model) {
+    public String delMessage(@PathVariable("id") long id, Model model) {
         messageRepository.deleteById(id);
         return "redirect:/";
     }

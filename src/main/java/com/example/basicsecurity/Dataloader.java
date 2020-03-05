@@ -61,39 +61,86 @@ public class Dataloader implements CommandLineRunner {
         Role adminRole = roleRepository.findByRole("ADMIN");
         Role userRole = roleRepository.findByRole("USER");
 
-        User user = new User("jim@jim.com", "password", "Jim", "Jimmerson", true, "jim");
-        user.setRoles(Arrays.asList(userRole));
+        User user = new User("admin@admin.com", "password", "Admin", "User", true, "admin");
+        user.setRoles(Arrays.asList(adminRole));
         userRepository.save(user);
 
-        User user2 = new User("admin@admin.com", "password", "Admin", "User", true, "admin");
-        user2.setRoles(Arrays.asList(adminRole));
+        User user2 = new User("jim@jim.com", "password", "Jim", "Jimmerson", true, "jim");
+        user2.setRoles(Arrays.asList(userRole));
         userRepository.save(user2);
+
+        User user3 = new User("test@test.com", "test", "Testy", "Tester", true, "test");
+        user3.setRoles(Arrays.asList(userRole));
+        userRepository.save(user3);
+
+        User user4 = new User("aang@avatarsonly.com", "password", "Aang", "The Last Airbender", true, "aang");
+        user4.setRoles(Arrays.asList(userRole));
+        userRepository.save(user4);
+
+        User user5 = new User("sokka@watertribe.net", "password", "Sokka", "\"Captain Boomerang\"", true, "sokka");
+        user5.setRoles(Arrays.asList(userRole));
+        userRepository.save(user5);
+
+        User user6 = new User("katara@watertribe.net", "password", "Katara", "Water Bender", true, "katara");
+        user6.setRoles(Arrays.asList(userRole));
+        userRepository.save(user6);
+
+
         ///////////////////////////////////////////// END SECURITY /////////////////////////////////////////////
-
-
-//        //create "category"
-//        Category category = new Category();
-//        category.setName("Truck");
 
         //create "message"
         Message message = new Message();
-        message.setTitle("Gotta buy a Ferd! ");
-        message.setContent("2019 Ford F-150 Raptor is the BEST");
+        message.setTitle("Boomerangs > Bending");
+        message.setContent("Bending the elements is great and all, but it takes Real skill to master control over an inanimate object. Like a boomerang. A piece of wood.");
         message.setDate("Jan 1, 2020");
-        message.setImage("https://res.cloudinary.com/dwsdggfi5/image/upload/v1582924913/Images/vehicle/f150_ur1kc5.jpg");
-        message.setUser(user2);
+        message.setImage("https://res.cloudinary.com/dwsdggfi5/image/upload/v1583432051/Images/Avatar/boomerang_sokka_ip67rp.webp");
+        message.setUser(user5);
 
         //create empty set "messages", add "message", and add the set to "user2"
         Set<Message> messages = new HashSet<>();
         messages.add(message);
-        user2.setMessages(messages);
-        userRepository.save(user2);
+        user5.setMessages(messages);
+        userRepository.save(user5);
 
         //define and save user for "message"
-        message.setUser(user2);
+        message.setUser(user5);
         messageRepository.save(message);
 
         //////////////////////////////////////////////////////////////////////
+
+        message = new Message();
+        message.setTitle("Fire Nation Sucks");
+        message.setContent("Quit messing around near our shores, candleboys!  -- WATER TRIBEEEEEEEE");
+        message.setDate("June 19, 2016");
+        message.setImage("https://res.cloudinary.com/dwsdggfi5/image/upload/v1583432051/Images/Avatar/watertribe_iqg8gn.png");
+        message.setUser(user6);
+
+        messages = new HashSet<>();
+        messages.add(message);
+        user6.setMessages(messages);
+        userRepository.save(user6);
+
+        message.setUser(user6);
+        messageRepository.save(message);
+
+        //////////////////////////////////////////////////////////////////////
+
+        message = new Message();
+        message.setTitle("Hey Guys, Check this out!");
+        message.setContent("PRETTY COOL EHHH????");
+        message.setDate("June 19, 2016");
+        message.setImage("https://res.cloudinary.com/dwsdggfi5/image/upload/v1583432051/Images/Avatar/aang_marbles_fokzuc.gif");
+        message.setUser(user4);
+
+        messages = new HashSet<>();
+        messages.add(message);
+        user4.setMessages(messages);
+        userRepository.save(user4);
+
+        message.setUser(user4);
+        messageRepository.save(message);
+
+
 
 
 //        category = new Category();

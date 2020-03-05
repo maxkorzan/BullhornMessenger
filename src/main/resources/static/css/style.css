@@ -1,0 +1,61 @@
+
+.bg-index{
+    background: url("https://res.cloudinary.com/dwsdggfi5/image/upload/v1583432074/Images/Avatar/45336_avatar_the_last_airbender_brpo4z.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+
+    /*background-repeat: no-repeat, repeat;*/
+    /*background-image: url("img_tree.gif"), url("paper.gif");*/
+    /*background-blend-mode: lighten;*/
+}
+
+.bg-addpost{
+    background: url("https://res.cloudinary.com/dwsdggfi5/image/upload/v1583432074/Images/Avatar/45327_avatar_the_last_airbender_hin5je.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+}
+
+.bg-register{
+    background: url("https://res.cloudinary.com/dwsdggfi5/image/upload/v1583432074/Images/Avatar/45345_avatar_the_last_airbender_u9kdrr.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+}
+
+.bg-viewpost{
+    background: url("https://res.cloudinary.com/dwsdggfi5/image/upload/v1583432074/Images/Avatar/45339_avatar_the_last_airbender_ilcn7w.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+}
+
+.bg-secure{
+    background: url("https://res.cloudinary.com/dwsdggfi5/image/upload/v1583432074/Images/Avatar/45325_avatar_the_last_airbender_b9s4a4.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+}
+
+

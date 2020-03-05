@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <style>
+        /** { border: 1px solid red !important; }*/
+    </style>
+
+</head>
+<body class="bg-viewpost">
+
+<div th:replace="base :: navbar"></div>
+<br>
+<br>
+
+<div class="container">
+    <!--Header-->
+    <h1 class="mt-4 mb-3">View Post<small style="color: white" th:inline="text">Sub-Heading</small></h1>
+</div>
+
+    <!-- Project One -->
+<!--    <div th:each="car : ${category.cars}">-->
+        <div class="row">
+            <div class="col-md-7">
+                <a href="#">
+                    <div th:if="${message.image} != null">
+                        <img class="img-fluid rounded mb-3 mb-md-0" th:src="${message.image}" alt="NO IMAGE">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-5">
+                <h1 th:inline="text">Title: [[${message.title}]]</h1>
+                <div th:inline="text">Content: [[${message.content}]]</div>
+                <div th:inline="text">Author: [[${message.user.firstName}]] [[${message.user.lastName}]] </div>
+                <div th:inline="text">Date: [[${message.date}]]</div>
+
+                <br>
+
+                <div th:if="${message.user.getId()} == ${message_user_id}">
+                    <a th:href="@{/detail/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-primary" >Details</button></a>
+                    <a th:href="@{/update/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-warning" >Update</button></a>
+                    <a th:href="@{/delete/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-danger" >Delete</button></a>
+                </div>
+                <div th:if="${message.user.getId()} != ${message_user_id}">
+                    <a th:href="@{/detail/{id}(id=${message.id})}"><button type="button" class="btn btn-sm btn-primary" >Details</button></a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -20,7 +20,7 @@ public class Message {
 
     /////////////////////////////////////////////////////////////
     public Message() {
-        this.image="https://res.cloudinary.com/dwsdggfi5/image/upload/v1583268617/defaultCarImage_kijrsj.jpg";
+        this.image="https://res.cloudinary.com/dwsdggfi5/image/upload/c_scale,h_404/v1583432102/Images/Avatar/1031693-gorgerous-avatar-the-last-airbender-wallpaper-1920x1080_miwyxm.jpg";
     }
 
     /////////////////////////////////////////////////////////////
